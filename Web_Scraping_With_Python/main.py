@@ -19,7 +19,7 @@ p_and_c_novels = []
 
 #loop through each gerne to get the contents
 for genre in genres:
-    for page in range(1, 17):
+    for page in range(1, 18):
     
         pg = str(page)
         connector = f'{url}{genre}?page={pg}'
