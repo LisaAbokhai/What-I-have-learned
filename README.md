@@ -1,2 +1,3 @@
 # What-I-have-learned
-The skills I've acquired slowly through time
+
+## this repo is for projects I built myself and had fun making whilst learning new things and new tools
