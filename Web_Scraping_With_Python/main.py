@@ -50,14 +50,14 @@ for genre in genres:
                 to_get_chapter= novel.find('div' , attrs ={'class' : 'col-xs-2 text-info'})
                 chapter = to_get_chapter.find('a').text
                 end_of_url = to_get_title.a['href']
-                url_to_novel = f'https://novelfull.com/{end_of_url}'
+                url_to_novel = f'https://novelfull.com{end_of_url}'
 
                 author = whitespace_author.strip()
                 
     
 
                 
-                p_and_c_novels.append({'Title' : title, 'Author' : author, 'Chapter' : chapter, 'link' : url_to_novel})
+                p_and_c_novels.append({'Title' : title, 'Author' : author, 'Chapter End' : chapter, 'Link' : url_to_novel})
                     
                 # prevent duplication
                 # the for loop would cause duplication and novels occur in different genres
