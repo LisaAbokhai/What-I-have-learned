@@ -1,7 +1,7 @@
-#import bs4 to extract based on my filter, 
+# import bs4 to extract based on my filter, 
 # csv to transform the data extracted into a csv,
-#  os to put the csv file in a folder,
-#  requests to get the site.
+# os to put the csv file in a folder,
+# requests to get the site.
 
 from bs4 import BeautifulSoup as bs
 import csv
@@ -18,7 +18,7 @@ url = 'https://novelfull.com/genre/'
 # list to hold the novel output
 p_and_c_novels = []
 
-#loop through each gerne to get the contents
+# loop through each gerne to get the contents
 for genre in genres:
     for page in range(1, 18):
     
@@ -28,7 +28,7 @@ for genre in genres:
 
         soup = bs(response.text, 'html.parser')
 
-        #there are multiple class=row headers that point to different things 
+        # there are multiple class=row headers that point to different things 
         # so this variable is used to limit the range of the search
         limiter = soup.find('div', attrs={'class' : 'list list-truyen col-xs-12'}) 
         novels = limiter.findAll(attrs= {'class' : 'row'})
@@ -82,7 +82,7 @@ directory_name = 'novel'
 if not os.path.exists(directory_name):   # Make novel folder if it does not exist
      os.makedirs(directory_name)
 
-#header
+# header
 keys = all_novels[0].keys()
 
 with open('novel/novels.csv', 'w', newline='', encoding='utf-8') as output_file:
