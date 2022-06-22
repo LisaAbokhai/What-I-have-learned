@@ -12,6 +12,7 @@ from requests import get
 genres = ['Comedy', 'Martial+Arts', 'Sci-fi', 'Gender+Bender',\
      'Mature', 'Fantasy', 'Tradedy', 'Adventure', 'Psychological', 'Xianxia',\
          'Wuxia', 'Historical', 'Slice+of+Life','Adult', 'Josei', 'Mecha', 'Yaoi' ]
+         
 url = 'https://novelfull.com/genre/'
 
 # list to hold the novel output
@@ -27,7 +28,8 @@ for genre in genres:
 
         soup = bs(response.text, 'html.parser')
 
-        #there are multiple class=row headers that point to different things so this variable is used to limit the range of the search
+        #there are multiple class=row headers that point to different things 
+        # so this variable is used to limit the range of the search
         mainn = soup.find('div', attrs={'class' : 'list list-truyen col-xs-12'}) 
         novels = mainn.findAll(attrs= {'class' : 'row'})
 
@@ -57,7 +59,8 @@ for genre in genres:
     
 
                 
-                p_and_c_novels.append({'Title' : title, 'Author' : author, 'Chapter End' : chapter, 'Link' : url_to_novel})
+                p_and_c_novels.append({'Title' : title, 'Author' : author,\
+                     'Chapter End' : chapter, 'Link' : url_to_novel})
                     
                 # prevent duplication
                 # the for loop would cause duplication and novels occur in different genres
