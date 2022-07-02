@@ -1,14 +1,23 @@
 # Import bs4 to novel details
 # pandas to save data into a dataframe
 # Requests to get the site's response.
+# Configparser to parse user.conf
 
 from bs4 import BeautifulSoup as bs
 from requests import get
 import pandas as pd
+import configparser
 
+#  Parse user.conf file
+parser = configparser.ConfigParser()
+path = r'Extacting_data_With_S3\user.conf'
+parser.read(path)
+
+#  Create environment var
+my_user_agent = parser.get("useragent", "user_agent")
 
 #  Would return 403 error if the user agent isn't present in headers
-agent = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36'}
+agent = {'User-Agent' : my_user_agent }
 url = 'https://www.novelupdates.com/series-ranking/?rank=popular&pg='
 
 # list to hold the novel output
