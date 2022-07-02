@@ -6,7 +6,7 @@ import configparser
 
 #  Parse sql.conf file
 parser = configparser.ConfigParser()
-path = r'C:\Users\LISA\Learning\What-I-have-learned\Extacting_data_With_S3\pipeline.conf'
+path = r'Extacting_data_With_S3\pipeline.conf'
 parser.read(path)
 
 #  Create environment vars
