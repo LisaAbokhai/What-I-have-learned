@@ -1,6 +1,6 @@
-# import bs4 to extract based on my filter, 
-#  Save data from web scraope into a
-# requests to get the site.
+# Import bs4 to novel details
+# Save data from web scraope into a
+# Requests to get the site's response.
 
 from bs4 import BeautifulSoup as bs
 from requests import get
@@ -49,7 +49,7 @@ for page in range(1, 518):
         #  find if the complete tag exists
         complete= novel.findAll('a', attrs = {'class' : 'gennew complete'})
 
-        # How often the novel is updated if it's not complete
+        # How often the novel is updated
         update_frequency = to_get_chapter.find_next('span' , attrs ={'class' : 'ss_desk'}).text
 
         #  if the complete tag exists in the novel then yes if not no
@@ -64,6 +64,6 @@ for page in range(1, 518):
                     'Link' : url_to_novel_info , 'Completed' : completed, 
                     'Update_Frequency' : update_frequency})
 
-
-df = pd.DataFrame(books)
-print(df.head())
+#  Create dataframe for novels
+novel_df = pd.DataFrame(books)
+print(novel_df.head())

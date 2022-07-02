@@ -1,6 +1,6 @@
-#  pymysql to crate connection to mysql
-#  csv to write the query result into a csv file
-# configparser to pull sensitive infomation from csql.conf file
+# pymysql to create connection to mysql
+# csv to write the query result into a csv file
+# configparser to pull sensitive information from sql.conf file
 import pymysql
 import csv
 import configparser
@@ -24,6 +24,7 @@ con = pymysql.connect(host = hostname,
                       db = database,
                       port = int(port))
 
+#  Check if connection is good
 if con is None:
  print("Error! check variables")
 else:

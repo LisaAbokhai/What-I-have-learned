@@ -1,5 +1,5 @@
 # pandas for dataframe
-# sqlalchemy to create engine fore connection
+# sqlalchemy to create engine for connection
 # configparser to parse sql.conf file
 # get_novel to get the dataframe with the data
 
@@ -24,4 +24,4 @@ password = parser.get('mysql', 'password')
 sqlEngine = create_engine(f'mysql+pymysql://{username}:{password}@{hostname}/{database}')
 
 #  Load dataframe into MySQL database
-get_novels.df.to_sql(con=sqlEngine, name='books', if_exists='replace', index=False)
+get_novels.novel_df.to_sql(con=sqlEngine, name='books', if_exists='replace', index=False)
