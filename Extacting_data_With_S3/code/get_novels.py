@@ -1,5 +1,5 @@
 # Import bs4 to novel details
-# Save data from web scraope into a
+# pandas to save data into a dataframe
 # Requests to get the site's response.
 
 from bs4 import BeautifulSoup as bs
