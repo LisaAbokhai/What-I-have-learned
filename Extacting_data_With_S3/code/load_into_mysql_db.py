@@ -10,7 +10,7 @@ import get_novels
 
 #  Parse sql.conf file
 parser = configparser.ConfigParser()
-path = r'C:\Users\LISA\Learning\What-I-have-learned\Extacting_data_With_S3\sql.conf'
+path = r'Extacting_data_With_S3\sql.conf'
 parser.read(path)
 
 #  Create environment variables
