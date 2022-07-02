@@ -1,0 +1,3 @@
+*.conf
+*.mwb
+__pycache__
