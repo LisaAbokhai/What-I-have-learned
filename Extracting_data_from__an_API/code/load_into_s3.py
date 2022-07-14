@@ -23,9 +23,9 @@ s3.create_bucket(Bucket='mal-api-anime-bucket')
 
 #  Upload the csv into s3 bucket
 path = r'Extracting_data_from__an_API\csv\anime_favorite_rank.csv'
-s3_file = 'anime_rank_300'
+s3_file_name = 'anime_rank_300'
 bucket_name = 'mal-api-anime-bucket'
-s3.upload_file(path, bucket_name, s3_file)
+s3.upload_file(path, bucket_name, s3_file_name)
 
 # Check if bucket has been created
 # Call S3 to list current buckets
