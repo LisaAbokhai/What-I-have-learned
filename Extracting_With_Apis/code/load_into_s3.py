@@ -23,7 +23,7 @@ s3.create_bucket(Bucket='mal-api-anime-bucket')
 
 #  Upload the csv into s3 bucket
 path = r'Extracting_With_Apis\csv\anime_favorite_rank.csv'
-s3_file_name = 'anime_rank_300'
+s3_file_name = 'anime_rank_300.csv'
 bucket_name = 'mal-api-anime-bucket'
 s3.upload_file(path, bucket_name, s3_file_name)
 
