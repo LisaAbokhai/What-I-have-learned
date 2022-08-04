@@ -5,8 +5,6 @@ import glob
 import shutil
 
 
-
-
 def num_of_page(file_name = str):
     """This function counts the number of pages in a file or from files and returns it as a list of dictionary(ies)
 
@@ -82,4 +80,6 @@ def into_folder(folder_name = str, original_path = str , file_name = str):
                     print(ky)
                     destination = f'{folder_name}\{folder}'
                     shutil.copy(key, destination)
+
+
 
