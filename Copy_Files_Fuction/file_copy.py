@@ -4,7 +4,9 @@ import os
 import glob
 import shutil
 
-    
+
+
+
 def num_of_page(file_name = str):
     """This function counts the number of pages in a file or from files and returns it as a list of dictionary(ies)
 
@@ -18,6 +20,9 @@ def num_of_page(file_name = str):
     reader = PdfReader(file_name)
     number_of_pages = len(reader.pages)
     return {file_name: number_of_pages}
+    
+    
+    
     
 def into_folder(folder_name = str, original_path = str , file_name = str):
     """This function copies the files from the original path directory of the files then 
@@ -34,6 +39,8 @@ def into_folder(folder_name = str, original_path = str , file_name = str):
     Returns:
         directory : This function returns a directory that contains folders of the files based on the number of pages of those files.
     """    
+    
+    
     # Get the files from the origin folder
     files = glob.glob(fr'{original_path}/*.pdf')
 
@@ -43,6 +50,7 @@ def into_folder(folder_name = str, original_path = str , file_name = str):
         point = num_of_page(filename)
         file.append(point)
 
+        
     #  Extract the number of pages from the list of dictionary in the file list
     folder_values = []
     for book in file:
