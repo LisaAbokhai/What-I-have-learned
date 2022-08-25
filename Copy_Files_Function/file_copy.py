@@ -19,16 +19,16 @@ def num_of_page(file_name = str):
     number_of_pages = len(reader.pages)
     return {file_name: number_of_pages}
     
-def into_folder(folder_name = str, original_path = str , file_name = str):
+def into_folder(main_directory = str, original_path = str , sub_directory = str):
     """This function copies the files from the original path directory of the files then 
          stores it in a directory with different destination folders 
         based on the number of pages in the files from the original path
 
     Args:
-        folder_name (_type_, string): This will be the name of the directory that will house 
-        the folders for the pages of teh file and the files of those pages. Defaults to str.
+        main_directory (_type_, string): This will be the name of the directory that will house 
+        the folders for the pages of the file and the files of those pages. Defaults to str.
         original_path (_type_, string): This is the directory that contains the files. Defaults to str.
-        file_name (_type_, string): This is the folder that will house the files 
+        sub_directory (_type_, string): This is the folder that will house the files 
         based on the pages of the files. Defaults to str.
 
     Returns:
@@ -51,17 +51,17 @@ def into_folder(folder_name = str, original_path = str , file_name = str):
 
 
     # Make directory for file folders to be stored
-    os.mkdir(fr'{folder_name}')
+    os.mkdir(fr'{main_directory}')
 
 
     #  Make folders based of the numbers 
     for num_of_pages in set(folder_values):  # Use set function to prevent looping over a number more than once
-        if not os.path.exists(f'{folder_name}/{file_name}{num_of_pages}'):
-            os.mkdir(f'{folder_name}/{file_name}_{num_of_pages}')
+        if not os.path.exists(f'{main_directory}/{sub_directory}{num_of_pages}'):
+            os.mkdir(f'{main_directory}/{sub_directory}_{num_of_pages}')
 
 
     # Check folders created
-    folder_list = os.listdir(f'{folder_name}')
+    folder_list = os.listdir(f'{main_directory}')
 
 
     #  Copy files into folder
@@ -72,6 +72,6 @@ def into_folder(folder_name = str, original_path = str , file_name = str):
                 if str(value) == num_folder:
                     ky = key.split('\\')[-1]
                     print(ky)
-                    destination = f'{folder_name}\{folder}'
+                    destination = f'{main_directory}\{folder}'
                     shutil.copy(key, destination)
 
