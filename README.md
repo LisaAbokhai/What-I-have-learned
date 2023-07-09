@@ -37,5 +37,3 @@ These tools provided me with valuable insights and expanded my skillset, allowin
 ## Contributing
 
 Feel free to explore the projects in this repository and provide feedback or suggestions. If you have any ideas for new projects or improvements to existing ones, contributions are always welcome! Simply fork this repository, make your changes, and submit a pull request.
-
-Let's learn and have fun together!
