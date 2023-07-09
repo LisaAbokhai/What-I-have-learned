@@ -1,4 +1,4 @@
-# Anime Ranking Data
+# Copy Fuction
 
 This program copies file(s) from the original path and loads the copied file(s) into folder(s) based on the number of pages of each file.
 
